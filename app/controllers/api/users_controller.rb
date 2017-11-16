@@ -1,9 +1,9 @@
 class Api::UsersController < ApplicationController
   def create
+    debugger
     @user = User.new(user_params)
-    byebug
     if @user.save
-      # login!(@user)
+      login!(@user)
       render "api/users/show"
     else
       render @user.errors.full_messages, status: 422

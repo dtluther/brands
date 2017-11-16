@@ -1,5 +1,16 @@
+.session {
+    margin-top: -75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.session h1 {
+    font-family: system-ui;
+    color: #28262e;
+    margin-bottom: 30px;
+}
 .session-form {
-    margin-top: -35px;
     border-radius: 7px;
     border: 1px solid lightgray;
     padding: 0px 15px;

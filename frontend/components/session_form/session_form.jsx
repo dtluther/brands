@@ -22,11 +22,9 @@ class SessionForm extends React.Component {
     handleSubmit() {
         return e => {
             e.preventDefault();
-            this.props.processForm(formData)
+            this.props.signup({user: this.state})
                 .then(() => {
-                    this.props.history.push(`/users/${this.state.username}`);
-                    //                                            why does this.props.currentUser.username not work?
-                    this.props.handleCloseModals();
+                    this.props.history.push(`/brands`);
                 });
 
         };
@@ -47,27 +45,31 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        console.log(this.props)
+        const signIn = "Sign Up Below!"
         return (
-            <form className="session-form" onSubmit={this.handleSubmit()}>
-                <button className="demo-login">Demo Login</button>
-                <p className="or">----------- OR ------------</p>
-                <input className="session-input username"
-                    type="text" 
-                    placeholder="Username"
-                    onChange={this.update('username')}
-                />
-                <input className="session-input password"
-                    type="text"
-                    placeholder="Password"
-                    onChange={this.update('password')}
-                />
-                <input className="session-submit"
-                    type="submit"
-                    value="Submit"
-                />
-
-            </form>
+            <div className="session">
+                <div>
+                    <h1>{signIn}</h1>
+                </div>
+                <form className="session-form" onSubmit={this.handleSubmit()}>
+                    <button className="demo-login">Demo Login</button>
+                    <p className="or">----------- OR ------------</p>
+                    <input className="session-input username"
+                        type="text" 
+                        placeholder="Username"
+                        onChange={this.update('username')}
+                    />
+                    <input className="session-input password"
+                        type="text"
+                        placeholder="Password"
+                        onChange={this.update('password')}
+                    />
+                    <input className="session-submit"
+                        type="submit"
+                        value="Submit"
+                    />
+                </form>
+            </div>
         );
     }
 }
