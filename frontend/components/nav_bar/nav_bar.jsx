@@ -10,10 +10,48 @@ class NavBar extends React.Component {
         };
     }
 
+    handleLogout() {
+        return e => {
+            e.preventDefault();
+            this.props.logout()
+                .then(() => this.props.history.push("/"));
+        };
+    }
+    sessionButtons() {
+        if (this.props.loggedIn) {
+            return (
+                <div className="buttons">
+                    <div>
+                        <Link className="brands-link" to={home}>
+                            <button className="brands-button">Brands</button>
+                        </Link>
+                        <Link className="products-link" to={home}>
+                            <button className="products-button">Products</button>
+                        </Link>
+                    </div>
+
+                    <button className="session-button logout"
+                        onClick={this.handleLogout()}>Log Out</button>
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <div className="empty-buttons"></div>
+
+                    <div className="session-links">
+                        <a className="session-link signup">Sign Up</a>
+                        <a className="session-link login">Log In</a>
+                    </div>
+                </div>
+            );
+        }
+
+    }
     render() {
         return (
-            <div>
-                <h1>TESTING TESTING</h1>
+            <div className="nav">
+                {this.sessionButtons()}
             </div>
         );
     }

@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+ html, body, div, p, span, h1, h2, h3, h4, a, ol, ul, li, form, label, article, aside, figure, figcaption, footer, header, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+input, button {
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+
+
+/* This is useful when implementing a grid system so that all image elements
+will take up 100% width of their containers */
+img {
+  width: 100%
+}
+
+body, html {
+    height: 100%;
+}
+
+.main {
+/* height: calc(vh - 50px); */
+/* background: url(/assets/mall.jpg);
+background-size: cover; */
+
+}
