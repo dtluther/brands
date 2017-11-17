@@ -15,7 +15,8 @@ const App = () => (
 
         <section className="main">
             <Switch>
-                <Route path="/brands/new" component={BrandsFormPage}
+                <Route path="/brands/:brand_id/:brand_name" component={BrandsFormPage}/>
+                <Route path="/brands/new" component={BrandsFormPage}/>
                 <Route path="/brands" component={BrandsPageContainer}/>
                 <Route path="/products" component={ProductsPageContainer}/>
                 <AuthRoute path="/login" component={SplashPage}/>

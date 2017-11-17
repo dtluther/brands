@@ -38,6 +38,7 @@
 }
 
 .brand-index-item i {
+    color: #28262E;
     cursor: pointer;
     margin: 0 15px;
 }
@@ -47,10 +48,42 @@
     font-size: 40px;
 }
 
-/* handleDelete(brandKey) {
-    return e=> {
-        e.preventDefault();
-        this.props.deleteBrand(brandKey);
-    }
-    ;
-} */
+.brand-form-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+}
+
+.edit-header {
+    font: 16px system-ui;
+    position: absolute;
+    top: 18vh;
+}
+
+.new-brand-input {
+    font: 16px system-ui;
+    margin-top: -275px;
+    text-align: center;
+    height: 50px;
+    width: 250px;
+    border: 1px solid #dedede;
+    border-radius: 7px;
+}
+.create-brand {
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: 35px 0 50px 0;
+    border-radius: 7px;
+    border: 1px solid #dedede;
+    background-color: #A0C1EA;
+    color: white;
+    width: 325px;
+    height: 45px;
+}
+
+.create-brand:hover {
+    background-color: #5495e6;
+}

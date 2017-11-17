@@ -2,7 +2,8 @@ import merge from 'lodash/merge';
 import {
     RECEIVE_BRANDS,
     RECEIVE_BRAND,
-    REMOVE_BRAND
+    REMOVE_BRAND,
+    UPDATE_BRAND
 } from '../actions/brand_actions';
 
 // const _nullBrand = {
@@ -19,7 +20,14 @@ const brandsReducer = (oldState = {}, action) => {
             return action.brands;
         case RECEIVE_BRAND:
             return merge({}, oldState, action.brand);
+        case UPDATE_BRAND:
+        debugger;
+            const idToUpdate = action.id;
+            newState[idToUpdate] = action.brand[idToUpdate];
+            return newState;
         case REMOVE_BRAND:
+        debugger;
+
             const idToDelete = action.brand.id;
             delete newState[idToDelete];
             return newState;

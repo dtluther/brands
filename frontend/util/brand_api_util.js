@@ -24,7 +24,7 @@ export const updateBrand = brand => {
     return $.ajax({
         method: 'PATCH',
         url: `api/brands/${brand.id}`,
-        data: brand
+        data: { brand }
     });
 };
 

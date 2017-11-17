@@ -2,6 +2,7 @@ import * as BrandAPIUtil from '../util/brand_api_util';
 
 export const RECEIVE_BRAND = 'RECEIVE_BRAND';
 export const RECEIVE_BRANDS = 'RECEIVE_BRANDS';
+export const UPDATE_BRAND = 'UPDATE_BRAND';
 export const REMOVE_BRAND = 'REMOVE_BRAND';
 export const RECEIVE_BRAND_ERRORS = 'RECEIVE_BRAND_ERRORS';
 
@@ -12,6 +13,10 @@ export const receiveBrands = brands => ({
 
 export const receiveBrand = brand => ({
     type: RECEIVE_BRAND,
+    brand
+});
+export const modifyBrand = brand => ({
+    type: UPDATE_BRAND,
     brand
 });
 
@@ -44,8 +49,9 @@ export const createBrand = brand => dispatch => {
               err => dispatch(receiveBrandErrors(err.responseJSON)));
 };
 
-export const updateBrand = brand => dispatch => {
-    return BrandAPIUtil.updateBrand(brands)
+export const updateBrand = (brand) => dispatch => {
+    debugger;
+    return BrandAPIUtil.updateBrand(brand)
         .then(brand => dispatch(receiveBrand(brand)),
               err => dispatch(receiveBrandErrors(err.responseJSON)));
 };

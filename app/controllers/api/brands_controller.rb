@@ -1,6 +1,5 @@
 class Api::BrandsController < ApplicationController
   def create
-    debugger;
     @brand = Brand.new(brand_params)
     if @brand.save
       render "api/brands/show"
@@ -23,6 +22,7 @@ class Api::BrandsController < ApplicationController
   end
 
   def update
+    debugger;
     @brand = Brand.find_by(id: params[:id])
 
     if @brand
@@ -44,7 +44,7 @@ class Api::BrandsController < ApplicationController
   end
 
   def brand_params
-    params.require(:brand).permit(:name);
+    params.require(:brand).permit(:id, :name);
   end
 
 end
