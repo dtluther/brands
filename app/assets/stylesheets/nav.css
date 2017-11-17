@@ -3,23 +3,57 @@
     background-color: #28262E;
     color: white;
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: space-between; */
     align-items: center;
     padding: 0 40px;
 }
 
+.buttons {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.session-links {
+    display: flex;
+
+
+}
 .session-link {
+    text-decoration: none;
     color: #b2d1f7;
     cursor: pointer;
-    padding: 3px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: system-ui;
+    font-size: 16px;
     margin: 0 15px;
-    width: 50px;
-    height: 25px;
+    width: 75px;
+    height: auto;
 }
 
-.session-link:hover {
+.signup, .login {
+    padding: 3px 0;
+}
+.signup:hover, .login:hover {
     color: #5495e6;
     border-bottom: 2px solid #5495e6;
 }
 
+.session-button {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #28262E;
+    background-color: #A0C1EA;
+    width: auto;
+    border-radius: 4px;
+    margin: 0 10px;
+    font: 14px system-ui;
+    color: white;
+}
+
+.session-button:hover {
+    background-color: #5495e6;
+}

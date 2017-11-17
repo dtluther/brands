@@ -18,18 +18,16 @@ class NavBar extends React.Component {
         };
     }
     sessionButtons() {
-        console.log('navbar props:', this.props)
-        console.log('navbar state:', this.state)
         if (this.props.loggedIn) {
             return (
                 <div className="buttons">
-                    <div>
+                    <div className="brands-products-links">
                         <Link className="brands-link" to={"/brands"}>
-                            <button className="brands-button">Brands</button>
+                            <button className="session-button brands-button">Brands</button>
                         </Link>
-                        {/* <Link className="products-link" to={"/products"}>
-                            <button className="products-button">Products</button>
-                        </Link> */}
+                        <Link className="products-link" to={"/products"}>
+                            <button className="session-button products-button">Products</button>
+                        </Link>
                     </div>
 
                     <button className="session-button logout"
@@ -42,8 +40,12 @@ class NavBar extends React.Component {
                     <div className="empty-buttons"></div>
 
                     <div className="session-links">
-                        <a className="session-link signup">Sign Up</a>
-                        <a className="session-link login">Log In</a>
+                        <Link className="session-link" to={"/"}>
+                            <h2 className="signup">Sign Up</h2>
+                        </Link>
+                        <Link className="session-link" to={"/login"}>
+                            <h2 className="login">Log In</h2>
+                        </Link>
                     </div>
                 </div>
             );

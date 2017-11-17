@@ -1,0 +1,1 @@
+json.extract! brand, :id, :name, :make_id, :description, :price

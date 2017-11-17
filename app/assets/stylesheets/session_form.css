@@ -57,9 +57,9 @@
 
 }
 
-/* .session-submit {
-    background-color: #A0C1EA;
-    width: 200px;
-    height: 30px;
-
-} */
+.session-errors {
+    text-align: center;
+    width: 305px;
+    padding: 0 10px;
+    font: 16px system-ui;
+}
