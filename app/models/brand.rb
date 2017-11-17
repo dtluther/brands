@@ -9,4 +9,11 @@
 #
 
 class Brand < ApplicationRecord
+    has_many :products,
+        primary_key: :id,
+        foreign_key: :make_id,
+        class_name: :User
+        
+    validates :name, presence: true
+
 end
