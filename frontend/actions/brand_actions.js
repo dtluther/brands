@@ -5,9 +5,9 @@ export const RECEIVE_BRANDS = 'RECEIVE_BRANDS';
 export const REMOVE_BRAND = 'REMOVE_BRAND';
 export const RECEIVE_BRAND_ERRORS = 'RECEIVE_BRAND_ERRORS';
 
-export const receiveBrands = brandsArray => ({
+export const receiveBrands = brands => ({
     type: RECEIVE_BRANDS,
-    brandsArray
+    brands
 });
 
 export const receiveBrand = brand => ({
@@ -28,7 +28,7 @@ export const receiveBrandErrors = brandErrors => ({
 // thunk action creators
 export const fetchBrands = () => dispatch => {
     return BrandAPIUtil.fetchBrands()
-        .then(brandsArray => dispatch(receiveBrands(brandsArray)),
+        .then(brands => dispatch(receiveBrands(brands)),
               err => dispatch(receiveBrandErrors(err.responseJSON)));
 };
 
