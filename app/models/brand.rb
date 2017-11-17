@@ -12,7 +12,7 @@ class Brand < ApplicationRecord
     has_many :products,
         primary_key: :id,
         foreign_key: :make_id,
-        class_name: :User
+        class_name: :Product
         
     validates :name, presence: true
 

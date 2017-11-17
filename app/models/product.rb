@@ -12,4 +12,11 @@
 #
 
 class Product < ApplicationRecord
+    belongs_to :brand,
+        primary_key: :id,
+        foreign_key: :make_id,
+        class_name: :Brand
+
+    validates :name, :make_id, :description, :price, presence: true
+    validates :price, numericality: { greater_than: 0, less_than_or_equal_to: 100 }
 end

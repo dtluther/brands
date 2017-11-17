@@ -50,7 +50,6 @@ export const createBrand = brand => dispatch => {
 };
 
 export const updateBrand = (brand) => dispatch => {
-    debugger;
     return BrandAPIUtil.updateBrand(brand)
         .then(brand => dispatch(receiveBrand(brand)),
               err => dispatch(receiveBrandErrors(err.responseJSON)));

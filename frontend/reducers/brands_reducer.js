@@ -21,13 +21,10 @@ const brandsReducer = (oldState = {}, action) => {
         case RECEIVE_BRAND:
             return merge({}, oldState, action.brand);
         case UPDATE_BRAND:
-        debugger;
             const idToUpdate = action.id;
             newState[idToUpdate] = action.brand[idToUpdate];
             return newState;
         case REMOVE_BRAND:
-        debugger;
-
             const idToDelete = action.brand.id;
             delete newState[idToDelete];
             return newState;

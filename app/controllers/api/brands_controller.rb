@@ -13,7 +13,7 @@ class Api::BrandsController < ApplicationController
     if @brand
       render "api/brands/show"
     else
-      render json: ["Track does not exist/Unable to delete track"], status: 422
+      render json: ["Cannot find brand"], status: 422
     end
   end
 
@@ -22,7 +22,6 @@ class Api::BrandsController < ApplicationController
   end
 
   def update
-    debugger;
     @brand = Brand.find_by(id: params[:id])
 
     if @brand
@@ -44,7 +43,7 @@ class Api::BrandsController < ApplicationController
   end
 
   def brand_params
-    params.require(:brand).permit(:id, :name);
+    params.require(:brand).permit(:id, :name)
   end
 
 end

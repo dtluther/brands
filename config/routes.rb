@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
 
 
+  get 'products/create'
+
+  get 'products/index'
+
+  get 'products/show'
+
+  get 'products/destroy'
+
+  get 'products/update'
+
   root "static_pages#root"
 
   namespace :api, defaults: { format: :json } do
