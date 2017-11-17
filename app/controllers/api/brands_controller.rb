@@ -29,6 +29,7 @@ class Api::BrandsController < ApplicationController
       render "api/brands/show"
     else
       render json: @brand.errors.full_messages, status: 422
+    end
   end
 
   def destroy
@@ -44,4 +45,5 @@ class Api::BrandsController < ApplicationController
   def brand_params
     params.require(:brand).permit(:name, :make_id, :description, :price);
   end
+
 end
