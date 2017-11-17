@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -42,7 +41,7 @@ class SessionForm extends React.Component {
                         this.props.login({ user: this.state })
                             .then(() => this.props.history.push("/brands"));
                     }
-                }, 100);
+                }, 150);
             };
             loginDemoInterval();
         };
@@ -68,7 +67,6 @@ class SessionForm extends React.Component {
     }
 
     renderErrors() {
-        console.log('errors', this.props.errors);
         return(
             <ul className="session-errors">
                 {
@@ -85,7 +83,6 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        console.log('session form props', this.props);
         let signInHeader, submitText;
         if (this.props.location.pathname === "/") {
             signInHeader = "Sign Up Below!";
