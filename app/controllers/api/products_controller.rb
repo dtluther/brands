@@ -1,8 +1,8 @@
 class Api::ProductsController < ApplicationController
   def create
-    @product = Product.new(brand_params)
+    @product = Product.new(product_params)
     if @product.save
-      render "api/brands/show"
+      render "api/products/show"
     else
       render @product.errors.full_messages, status: 422
     end
@@ -13,9 +13,9 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    @product = product.find_by(id: params[:id])
+    @product = Product.find_by(id: params[:id])
     if @product
-      render "api/brands/show"
+      render "api/products/show"
     else
       render json: ["Cannot find product"], status: 422
     end
@@ -35,8 +35,8 @@ class Api::ProductsController < ApplicationController
     @product = Product.find_by(id: params[:id])
 
     if @product
-      @product.update_attributes(brand_params)
-      render "api/brands/show"
+      @product.update_attributes(product_params)
+      render "api/products/show"
     else
       render json: @product.errors.full_messages, status: 422
     end

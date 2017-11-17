@@ -4,6 +4,7 @@
     end
 end
 
+
 # # This would work if I wanted an array of brands
 # json.array! @brands do |brand|
 #     json.partial! "api/brands/brand", brand: brand
