@@ -3,9 +3,14 @@ import {
     RECEIVE_BRANDS,
     RECEIVE_BRAND,
     REMOVE_BRAND
-} from '..actions/brand_actions';
+} from '../actions/brand_actions';
 
-const brandsreducer = (oldState = {}, action) => {
+// const _nullBrand = {
+//     selectedBrand: null,
+//     allBrands: []
+// };
+
+const brandsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let newState = merge({}, oldState);
 
@@ -13,8 +18,7 @@ const brandsreducer = (oldState = {}, action) => {
         case RECEIVE_BRANDS:
             return action.brands;
         case RECEIVE_BRAND:
-            const newBrand = {[action.brand.id]: action.brand};
-            return merge({}, oldState, newBrand);
+            return merge({}, oldState, action.brand);
         case REMOVE_BRAND:
             const idToDelete = action.brand.id;
             delete newState[idToDelete];
@@ -24,3 +28,5 @@ const brandsreducer = (oldState = {}, action) => {
             return oldState;
     }
 };
+
+export default brandsReducer;

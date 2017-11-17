@@ -39,19 +39,19 @@ export const fetchBrand = id => dispatch => {
 };
 
 export const createBrand = brand => dispatch => {
-    return BrandAPIUtil.createBrand(fetchBrands)
+    return BrandAPIUtil.createBrand(brand)
         .then(brand => dispatch(receiveBrand(brand)),
               err => dispatch(receiveBrandErrors(err.responseJSON)));
 };
 
 export const updateBrand = brand => dispatch => {
-    return BrandAPIUtil.updateBrand(fetchBrands)
+    return BrandAPIUtil.updateBrand(brands)
         .then(brand => dispatch(receiveBrand(brand)),
               err => dispatch(receiveBrandErrors(err.responseJSON)));
 };
 
 export const deleteBrand = id => dispatch => {
     return BrandAPIUtil.deleteBrand(id)
-        .then(brand => dispatch(receiveBrand(brand)),
+        .then(brand => dispatch(removeBrand(brand)),
               err => dispatch(receiveBrandErrors(err.responseJSON)));
 };

@@ -7,10 +7,11 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // Actions
-import { login, signup, logout } from './actions/session_actions';
-window.login = login;
-window.signup = signup;
-window.logout = logout;
+import { fetchBrands, fetchBrand, createBrand, deleteBrand } from './actions/brand_actions';
+window.brands = fetchBrands;
+window.brand = fetchBrand;
+window.create = createBrand;
+window.delete = deleteBrand;
 // TESTING START
 // TESTING END
 
